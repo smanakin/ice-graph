@@ -23,7 +23,11 @@ This system is built entirely on **Microsoft Azure** using **professional DevOps
 
 This diagram outlines the complete MLOps lifecycle for the project, from data ingestion to model deployment.
 
-
+### Data sources
+- https://browser.dataspace.copernicus.eu/
+- https://search.asf.alaska.edu/#/
+- https://search.earthdata.nasa.gov/#
+  
 *(This is where you should insert the `architecture.png` diagram you create)*
 
 1.  **Ingestion:** `Azure Data Factory (ADF)` pulls raw S1/AMSR2 data into `Azure Blob Storage (Bronze)`.
