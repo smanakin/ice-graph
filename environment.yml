@@ -1,0 +1,25 @@
+name: icegraph
+channels:
+  - conda-forge
+  - pytorch
+dependencies:
+  # --- Core & Geospatial (MUST HAVE) ---
+  - python=3.10
+  - gdal
+  - rasterio
+  - opencv
+  - scikit-image
+
+  # --- ML ---
+  - pytorch
+  - torchvision
+  - torchaudio
+
+  # --- Base & Dev Tools ---
+  - jupyter
+  - numpy
+  - pandas
+  - matplotlib
+  - pre-commit
+  - flake8
+  - black
