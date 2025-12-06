@@ -1,25 +1,27 @@
 name: icegraph
 channels:
   - conda-forge
-  - pytorch
 dependencies:
-  # --- Core & Geospatial (MUST HAVE) ---
   - python=3.10
   - gdal
   - rasterio
-  - opencv
-  - scikit-image
+  - pip  # We explicitly ask for pip to handle the next section
 
-  # --- ML ---
-  - pytorch
-  - torchvision
-  - torchaudio
-
-  # --- Base & Dev Tools ---
-  - jupyter
-  - numpy
-  - pandas
-  - matplotlib
-  - pre-commit
-  - flake8
-  - black
+  - pip:
+    # Computer Vision (Headless = no GUI, perfect for Docker)
+    - opencv-python-headless
+    # PyTorch (CPU version to keep image small & fast)
+    - torch --index-url https://download.pytorch.org/whl/cpu
+    - torchvision --index-url https://download.pytorch.org/whl/cpu
+    - torchaudio --index-url https://download.pytorch.org/whl/cpu
+    # Graph Neural Networks
+    - torch_geometric
+    # Data Science & Dev Tools
+    - jupyter
+    - numpy
+    - pandas
+    - matplotlib
+    - scikit-image
+    - pre-commit
+    - flake8
+    - black
